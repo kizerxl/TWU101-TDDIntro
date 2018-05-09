@@ -3,6 +3,9 @@ package com.thoughtworks.tddintro.exercises.accountbalance;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import java.io.PrintStream;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -33,7 +36,7 @@ public class AccountTests {
     @Test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
         account = new Account(50);
-        
+
         account.withdraw(100);
 
         assertThat(account.getCurrentBalance(), is(50));
